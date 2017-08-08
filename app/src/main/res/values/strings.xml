@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Viasualizador Carreira Blizzard</string>
+    <string name="battle_tag">Digite a Battletag</string>
+    <string name="battlet_tag_url" translatable="false">https://us.api.battle.net/</string>
+    <string name="blizzard_key" translatable="false">cyy2xem4kthr77b786svv6du49f3t9em</string>
+    <string name="button_diablo">Perfil Diablo</string>
+    <string name="button_wow">Perfil WoW</string>
+    <string name="search_diablo">Buscando perfil diablo</string>
+</resources>
