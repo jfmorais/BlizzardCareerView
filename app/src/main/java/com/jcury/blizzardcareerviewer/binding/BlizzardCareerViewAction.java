@@ -31,6 +31,7 @@ public class BlizzardCareerViewAction {
         i.putExtra("battletag", binding.battletag.getText().toString());
         c.startService(i);
 
+
     }
 
     //TODO

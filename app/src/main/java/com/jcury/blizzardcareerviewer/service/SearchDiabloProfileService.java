@@ -3,6 +3,7 @@ package com.jcury.blizzardcareerviewer.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.jcury.blizzardcareerviewer.domain.dto.DiabloProfileDTO;
@@ -58,7 +59,7 @@ public class SearchDiabloProfileService extends IntentService {
                         }
 
                         resposta.putExtra("profile", profile);
-                        sendBroadcast(resposta);
+                        LocalBroadcastManager.getInstance(this).sendBroadcast(resposta);
                     }
                 }
 

@@ -21,6 +21,7 @@
 
 
         <service android:name="com.jcury.blizzardcareerviewer.service.SearchDiabloProfileService"/>
+
     </application>
 
 </manifest>
