@@ -78,7 +78,8 @@ public class DiabloProfile implements Serializable{
         this.paragonLevelSeasonHardcore = paragonLevelSeasonHardcore;
     }
 
-    public void addHero (DiabloHero hero){
+    public void addHero (String id, String name, String gender, String isClass, String level){
+        DiabloHero hero = new DiabloHero(id,  name,  gender,  isClass,  level);
         herois.add(hero);
     }
 

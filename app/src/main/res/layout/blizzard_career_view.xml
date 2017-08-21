@@ -2,6 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
+            name="profile"
+            type="com.jcury.blizzardcareerviewer.domain.model.DiabloProfile" />
+        <variable
             name="controller"
             type="com.jcury.blizzardcareerviewer.binding.BlizzardCareerViewAction"/>
     </data>
@@ -34,5 +37,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/button_wow"/>
+
 </LinearLayout>
 </layout>

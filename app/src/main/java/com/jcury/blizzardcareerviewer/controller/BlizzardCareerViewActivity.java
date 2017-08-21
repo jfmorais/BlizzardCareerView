@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,43 +30,48 @@ import java.sql.SQLOutput;
 public class BlizzardCareerViewActivity extends MotherActitivity {
 
     EditText battletagView;
-    TextView responseView;
-    Button procurarView;
-    DiabloProfile b;
-    BlizzardEndpoint endpoint;
+    Boolean encontrado = false;
     private BlizzardCareerViewBinding binding;
 
 
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.i("BLIZZARD", "Receiver recebeu-------");
-            Bundle extra = intent.getExtras();
-            Toast.makeText(context,"RECEBEU",Toast.LENGTH_LONG).show();
-            DiabloProfile d = (DiabloProfile) extra.get("profile");
-            System.out.println(d.getBattleTag());
+            Log.i("BLIZZARD_MAIN", "Receiver recebeu!");
+            DiabloProfile d = (DiabloProfile) intent.getSerializableExtra("profile");
+            encontrado = (Boolean) intent.getSerializableExtra("encontrou");
+
+            if (encontrado){
+                binding.setProfile(d);
+//                Intent listarHerois = new Intent(getApplicationContext(), DiabloProfileActivity.class);
+//                listarHerois.putExtra("profile", d);
+//                startActivity(listarHerois);
+            }else{
+                Toast.makeText(getApplicationContext(),"BattleTag nao encontrada!!",Toast.LENGTH_LONG).show();
+            }
         }
     };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.i("BLIZZARD_MAIN", "passou pelo CREATE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.blizzard_career_view);
         battletagView = (EditText) findViewById(R.id.battletag);
         binding = DataBindingUtil.setContentView(this, R.layout.blizzard_career_view);
         binding.setController(new BlizzardCareerViewAction(binding));
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i("BLIZZARD_MAIN", "passou pelo RESUME");
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("diablo"));
     }
 
     @Override
     protected void onPause() {
-
+        Log.i("BLIZZARD_MAIN", "passou pelo PAUSE");
         super.onPause();
         LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
     }
