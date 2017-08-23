@@ -18,7 +18,8 @@
             </intent-filter>
 
         </activity>
-
+        <activity android:name="com.jcury.blizzardcareerviewer.controller.DiabloProfileActivity"/>
+        <activity android:name="com.jcury.blizzardcareerviewer.controller.DiabloHeroListActivity"/>
 
         <service android:name="com.jcury.blizzardcareerviewer.service.SearchDiabloProfileService"/>
 

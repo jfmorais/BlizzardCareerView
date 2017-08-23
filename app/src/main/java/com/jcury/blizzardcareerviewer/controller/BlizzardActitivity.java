@@ -8,7 +8,7 @@ import android.view.View;
  * Created by jcury on 21/07/2017.
  */
 
-public abstract class MotherActitivity extends Activity {
+public abstract class BlizzardActitivity extends Activity {
 
     public void setOnClickActivity (int i, Class c) {
         View v = findViewById(i);

@@ -9,25 +9,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jcury.blizzardheroviewer.R;
 import com.jcury.blizzardcareerviewer.binding.BlizzardCareerViewAction;
 import com.jcury.blizzardheroviewer.databinding.BlizzardCareerViewBinding;
 import com.jcury.blizzardcareerviewer.domain.model.DiabloProfile;
-import com.jcury.blizzardcareerviewer.ws.BlizzardEndpoint;
-
-import java.sql.SQLOutput;
 
 /**
  * Created by jcury on 19/07/2017.
  */
 
-public class BlizzardCareerViewActivity extends MotherActitivity {
+public class BlizzardCareerViewActivity extends BlizzardActitivity {
 
     EditText battletagView;
     Boolean encontrado = false;
@@ -43,9 +37,9 @@ public class BlizzardCareerViewActivity extends MotherActitivity {
 
             if (encontrado){
                 binding.setProfile(d);
-//                Intent listarHerois = new Intent(getApplicationContext(), DiabloProfileActivity.class);
-//                listarHerois.putExtra("profile", d);
-//                startActivity(listarHerois);
+                Intent listarHerois = new Intent(BlizzardCareerViewActivity.this, DiabloHeroListActivity.class);
+                listarHerois.putExtra("profile", d);
+                startActivity(listarHerois);
             }else{
                 Toast.makeText(getApplicationContext(),"BattleTag nao encontrada!!",Toast.LENGTH_LONG).show();
             }
