@@ -1,22 +1,20 @@
 package com.jcury.blizzardcareerviewer.controller;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by jcury on 23/08/2017.
+ * Created by jcury on 24/08/2017.
  */
 
-public class BlizzardFragment extends Fragment {
-
-    public static final String TAG = "BLIZZARD_FRAGMENT";
+public class BlizzardListFragment extends ListFragment {
+    public static final String TAG = "LIST_FRAGMENT";
 
     @Override
     public void onAttach(Context context) {
