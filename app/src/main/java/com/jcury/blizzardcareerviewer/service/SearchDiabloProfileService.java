@@ -62,7 +62,7 @@ public class SearchDiabloProfileService extends IntentService {
                         profile.setBattleTag(profileDTO.getBattleTag());
                         profile.setParagonLevel(profileDTO.getParagonLevel());
                         for(DiabloHeroDTO h : heroDTO){
-                            profile.addHero(h.getId(), h.getName(), h.getGender(), h.getIsClass(),h.getLevel());
+                            profile.addHero(h);
                             Log.i("HEROIS", h.toString());
                         }
 

@@ -21,12 +21,16 @@ public class DiabloHero implements Serializable{
     private String dead;
     private String isLastUpdated;
 
-    public DiabloHero(String id, String name, String gender, String isClass, String level) {
+    public DiabloHero(String id, String name, String gender, String isClass, String level, String paragonLevel, String hardcore, String seasonal, String dead) {
         this.id = id;
         this.name = name;
         this.level = level;
         this.gender = gender;
         this.isClass = isClass;
+        this.paragonLevel = paragonLevel;
+        this.hardcore = hardcore;
+        this.seasonal = seasonal;
+        this.dead = dead;
 
     }
 
@@ -112,17 +116,6 @@ public class DiabloHero implements Serializable{
 
     @Override
     public String toString() {
-        return "DiabloHero{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", isClass='" + isClass + '\'' +
-                ", gender='" + gender + '\'' +
-                ", level='" + level + '\'' +
-                ", paragonLevel='" + paragonLevel + '\'' +
-                ", hardcore='" + hardcore + '\'' +
-                ", seasonal='" + seasonal + '\'' +
-                ", dead='" + dead + '\'' +
-                ", isLastUpdated='" + isLastUpdated + '\'' +
-                '}';
+        return  name;
     }
 }

@@ -1,5 +1,7 @@
 package com.jcury.blizzardcareerviewer.domain.model;
 
+import com.jcury.blizzardcareerviewer.domain.dto.DiabloHeroDTO;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -78,8 +80,8 @@ public class DiabloProfile implements Serializable{
         this.paragonLevelSeasonHardcore = paragonLevelSeasonHardcore;
     }
 
-    public void addHero (String id, String name, String gender, String isClass, String level){
-        DiabloHero hero = new DiabloHero(id,  name,  gender,  isClass,  level);
+    public void addHero (DiabloHeroDTO h){
+        DiabloHero hero = new DiabloHero(h.getId(),  h.getName(),  h.getGender(),  h.getIsClass(),  h.getLevel(),h.getParagonLevel(),h.getHardcore(), h.getSeasonal(),h.getDead());
         herois.add(hero);
     }
 
